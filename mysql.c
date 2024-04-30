@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <string.h>
 
+#include "mysql.h"
+
 int main(void){
 
     MYSQL *test;
@@ -14,13 +16,13 @@ int main(void){
         return -1;
     }
 
-    test = mysql_real_connect(test,"47.109.197.224","root","123456","test",3306,NULL,0);
+    test = mysql_real_connect(test,host,user,password,dbname,port,NULL,0);
     if(test==NULL){
         perror("fail to connect");
         return -1;
     }
 
-    char *sql="insert into testTable values (1,'33f')";
+    char *sql="delete from testTable";
     int ret = mysql_query(test,sql);
     if(ret!=0){
         perror("fail to query");
