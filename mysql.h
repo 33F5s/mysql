@@ -5,7 +5,8 @@
 #define port        3306
 #define user        "root"
 #define password    "123456"
-#define dbname      "test"
-
+#define dbsensor    "DataFrom6ull"
+#define dht11Dir    /*"/dev/dht11"*/ "/home/qrs/test.txt"
+#define ap3216cDir    /*"/dev/I2C_AP3216C"*/ "/home/qrs/test.txt"
 
 #endif
